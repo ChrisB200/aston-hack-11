@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://gyi5emrkwxrf"]
 
 [ext_resource type="PackedScene" uid="uid://c8qn4urjolwro" path="res://Assets/octopus_rigged.glb" id="1_olmu0"]
+[ext_resource type="Script" uid="uid://dv4uc1ksfytja" path="res://Scripts/ock.gd" id="2_twwfy"]
 
-[node name="Sketchfab_Scene" unique_id=1424308971 instance=ExtResource("1_olmu0")]
+[node name="Ock" unique_id=1424308971 instance=ExtResource("1_olmu0")]
+script = ExtResource("2_twwfy")
