@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b8q77iooha46s"]
+
+[ext_resource type="PackedScene" uid="uid://5k76itqrno7f" path="res://Assets/Ship/viking-line-ss-apollo-iii-1959-1976/source/ApolloIII.glb" id="1_slmpt"]
+[ext_resource type="Texture2D" uid="uid://b5p0a0mkplxfq" path="res://Assets/Sky/citrus_orchard_road_puresky_1k.exr" id="2_gf5bf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gf5bf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qq3op"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bjixy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rqihb"]
+noise = SubResource("FastNoiseLite_bjixy")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jf7k4"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0, 0.4392157, 0.91764706, 0.68235296)
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_rqihb")
+bent_normal_texture = SubResource("NoiseTexture2D_qq3op")
+refraction_enabled = true
+refraction_texture = SubResource("NoiseTexture2D_rqihb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq3op"]
+albedo_texture = ExtResource("2_gf5bf")
+
+[node name="Node3D" type="Node3D" unique_id=1155608437]
+
+[node name="ApolloIII" parent="." unique_id=1961846223 instance=ExtResource("1_slmpt")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.5252171, 0.38893598, 0.6164894)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=910312088]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -0.1621685, -1.6779894, 3.4202542)
+mesh = SubResource("BoxMesh_gf5bf")
+surface_material_override/0 = SubResource("StandardMaterial3D_jf7k4")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1660901945]
+radius = 100.0
+material = SubResource("StandardMaterial3D_qq3op")
