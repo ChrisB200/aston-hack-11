@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://dbsihtk25k1rh"]
 
+[ext_resource type="PackedScene" uid="uid://gyi5emrkwxrf" path="res://Scenes/ock.tscn" id="1_jjgbg"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u77a"]
-size = Vector3(100, 2, 100)
+size = Vector3(40, 2, 40)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jjgbg"]
-size = Vector3(100, 2, 100)
+size = Vector3(40, 2, 40)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_jjgbg"]
+
+[sub_resource type="Sky" id="Sky_bo1nx"]
+sky_material = SubResource("PhysicalSkyMaterial_jjgbg")
+
+[sub_resource type="Environment" id="Environment_jjgbg"]
+background_mode = 2
+sky = SubResource("Sky_bo1nx")
+
+[sub_resource type="SphereMesh" id="SphereMesh_jjgbg"]
+radius = 14.693
 
 [node name="Main" type="Node" unique_id=1956192783]
 
@@ -15,3 +29,21 @@ shape = SubResource("BoxShape3D_7u77a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform" unique_id=1817842810]
 mesh = SubResource("BoxMesh_jjgbg")
+
+[node name="Ock" parent="." unique_id=1424308971 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45152855, 2.080967, -16.200867)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=629837306]
+environment = SubResource("Environment_jjgbg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1725400274]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 14.339813, 0)
+light_energy = 4.495
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=293205716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0135088, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1259465696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1634197, 0)
+mesh = SubResource("SphereMesh_jjgbg")
