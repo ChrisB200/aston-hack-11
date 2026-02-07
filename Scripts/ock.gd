@@ -95,3 +95,61 @@ func _unhandled_input(event: InputEvent) -> void:
 			deg_to_rad(-60),
 			deg_to_rad(45)
 		)
+		
+# Load Minion script so Godot knows its type
+const Minion = preload("res://Scripts/minion.gd")
+
+@export var ring_radius: float = 2.2
+
+var minions: Array[Minion] = []
+
+# ----------------------------------------------------
+# ADD MINION
+# ----------------------------------------------------
+func add_minion(minion_scene: PackedScene) -> void:
+	print("add_minion() called")
+
+	var m: Minion = minion_scene.instantiate() as Minion
+	get_tree().current_scene.add_child(m)
+
+	minions.append(m)
+	print("Total minions:", minions.size())
+
+	_update_minion_slots()
+
+
+# ----------------------------------------------------
+# UPDATE FOLLOW POSITIONS
+# ----------------------------------------------------
+func _update_minion_slots() -> void:
+	var count: int = minions.size()
+
+	if count == 0:
+		return
+
+	# --- Assign follow offsets ---
+	for i in range(count):
+		var angle: float = TAU * float(i) / float(count)
+
+		var local_offset: Vector3 = Vector3(
+			sin(angle),
+			0.0,
+			cos(angle)
+		) * ring_radius
+
+		# Push them slightly behind player
+		local_offset.z += 2.0
+
+		var minion: Minion = minions[i]
+		minion.target = self
+		minion.slot_offset = local_offset
+
+	# --- Assign neighbors (for separation) ---
+	for i in range(count):
+		var nlist: Array[CharacterBody3D] = []
+
+		for j in range(count):
+			if i != j:
+				nlist.append(minions[j])
+
+		minions[i].neighbors = nlist

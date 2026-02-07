@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbsihtk25k1rh"]
 
 [ext_resource type="PackedScene" uid="uid://gyi5emrkwxrf" path="res://Scenes/ock.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://c76iiyvrn7i44" path="res://Scenes/minion_pickup.tscn" id="2_bo1nx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u77a"]
 size = Vector3(40, 2, 40)
@@ -38,3 +39,6 @@ environment = SubResource("Environment_jjgbg")
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 14.339813, 0)
 light_energy = 4.495
 shadow_enabled = true
+
+[node name="MinionPickup" parent="." unique_id=2039436012 instance=ExtResource("2_bo1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.596966, 2.1393385, -12.4353895)
