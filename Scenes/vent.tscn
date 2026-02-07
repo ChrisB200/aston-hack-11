@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://uws8ciy25h64"]
+
+[ext_resource type="Script" uid="uid://bbnmwc2vgrev5" path="res://Scenes/vent.gd" id="1_e0cf5"]
+[ext_resource type="ArrayMesh" uid="uid://chhurigod3q82" path="res://Assets/objects/Manhole cover/Manhole_cover_02.obj" id="1_xistq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xistq"]
+
+[node name="Vent" type="Node3D" unique_id=1830551711]
+script = ExtResource("1_e0cf5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1811253606]
+mesh = ExtResource("1_xistq")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D" unique_id=1172760031]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D" unique_id=372714305]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_xistq")
+
+[node name="ExitPoint" type="Node3D" parent="." unique_id=1332719008]

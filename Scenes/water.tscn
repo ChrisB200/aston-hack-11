@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://b8q77iooha46s"]
 
-[ext_resource type="PackedScene" uid="uid://5k76itqrno7f" path="res://Assets/Ship/viking-line-ss-apollo-iii-1959-1976/source/ApolloIII.glb" id="1_slmpt"]
+[ext_resource type="PackedScene" uid="uid://bhf3aynky7ll3" path="res://Scenes/boat.tscn" id="1_nvo4x"]
 [ext_resource type="Texture2D" uid="uid://b5p0a0mkplxfq" path="res://Assets/Sky/citrus_orchard_road_puresky_1k.exr" id="2_gf5bf"]
+[ext_resource type="ArrayMesh" uid="uid://bwtuychnshsn4" path="res://Assets/objects/Barrel/barrel.obj" id="3_tosn6"]
+[ext_resource type="PackedScene" uid="uid://ryuiq83f5b82" path="res://Assets/objects/Box/box_A.fbx" id="4_bwbb5"]
+[ext_resource type="PackedScene" uid="uid://drwke3iant71l" path="res://Assets/objects/Package/Package_2.fbx" id="5_nvo4x"]
+[ext_resource type="PackedScene" uid="uid://6tnsntuuj836" path="res://Assets/objects/Cardboard Boxes/CardboardBoxes_4.fbx" id="6_456iu"]
+[ext_resource type="PackedScene" uid="uid://db65d03agsfcp" path="res://Assets/objects/Crate(1)/Crate.fbx" id="7_fxba4"]
+[ext_resource type="PackedScene" uid="uid://df8i4iyiivo60" path="res://Assets/objects/Crate/Crate.fbx" id="8_3gcpw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gf5bf"]
 
@@ -30,14 +36,75 @@ albedo_texture = ExtResource("2_gf5bf")
 
 [node name="Node3D" type="Node3D" unique_id=1155608437]
 
-[node name="ApolloIII" parent="." unique_id=1961846223 instance=ExtResource("1_slmpt")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.5252171, 0.38893598, 0.6164894)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=910312088]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -0.1621685, -1.6779894, 3.4202542)
 mesh = SubResource("BoxMesh_gf5bf")
 surface_material_override/0 = SubResource("StandardMaterial3D_jf7k4")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1660901945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4624672, 5.8891335, -2.3609695)
+flip_faces = true
 radius = 100.0
+radial_segments = 8
+rings = 100
 material = SubResource("StandardMaterial3D_qq3op")
+
+[node name="Barrel" type="MeshInstance3D" parent="." unique_id=1922592241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.20567, -0.1571219, 0.012209654)
+mesh = ExtResource("3_tosn6")
+
+[node name="Barrel2" type="MeshInstance3D" parent="." unique_id=1217377828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.20567, -0.1571219, 0.5945212)
+mesh = ExtResource("3_tosn6")
+
+[node name="Barrel3" type="MeshInstance3D" parent="." unique_id=1636603259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.20567, 0.3745122, 0.28530115)
+mesh = ExtResource("3_tosn6")
+
+[node name="Barrel4" type="MeshInstance3D" parent="." unique_id=1678484613]
+transform = Transform3D(-0.060090363, 0, 0.9981929, 0.49291295, 0.8695725, 0.02967294, -0.8680011, 0.49380523, -0.05225293, -43.20567, -0.09167731, 0.9519805)
+mesh = ExtResource("3_tosn6")
+
+[node name="box_A" parent="." unique_id=1983409896 instance=ExtResource("4_bwbb5")]
+transform = Transform3D(2.428806, 0, 0, 0, 2.7057326, 0, 0, 0, 2.3568845, -40.966236, -0.36540866, -0.41248512)
+
+[node name="box_A2" parent="." unique_id=249464795 instance=ExtResource("4_bwbb5")]
+transform = Transform3D(1.2771343, 0, -2.0047445, 0, 2.7057326, 0, 2.0659204, 0, 1.2393159, -40.19901, -0.4712776, 0.1936267)
+
+[node name="Package_2" parent="." unique_id=1855574589 instance=ExtResource("5_nvo4x")]
+transform = Transform3D(1.767625, 0, 3.1497474, 0, 3.2931468, 0, -2.9455473, 0, 1.8901657, -41.501907, -0.2932537, 1.1140482)
+
+[node name="Barrel5" type="MeshInstance3D" parent="." unique_id=1747531931]
+transform = Transform3D(-0.02923005, -0.9995727, 0, 0.9995727, -0.02923005, 0, 0, 0, 1, -38.967293, 0.021431208, 2.8040257)
+mesh = ExtResource("3_tosn6")
+
+[node name="CardboardBoxes_4" parent="." unique_id=1493480586 instance=ExtResource("6_456iu")]
+transform = Transform3D(-0.08936586, 0, -0.76611584, 0, 0.61949897, 0, 0.4309255, 0, -0.15887804, -41.267574, -0.42152116, -2.2559397)
+
+[node name="Crate" parent="." unique_id=27184659 instance=ExtResource("7_fxba4")]
+transform = Transform3D(0.5301123, 0, 0, 0, 0.53106815, 0, 0, 0, 0.585669, -33.09947, -0.46966866, -4.977733)
+
+[node name="Crate2" parent="." unique_id=1248111870 instance=ExtResource("7_fxba4")]
+transform = Transform3D(0.5301123, 0, 0, 0, 0.60096383, 0, 0, 0, 0.51910263, -30.87981, -0.47492614, -4.188097)
+
+[node name="Crate3" parent="." unique_id=921912138 instance=ExtResource("7_fxba4")]
+transform = Transform3D(0.5301123, 0, 0, 0, 0.81349456, -0.09594603, 0, 0.5375831, 0.14518978, -28.220121, -0.47492614, -4.4899235)
+
+[node name="Crate4" parent="." unique_id=300568715 instance=ExtResource("8_3gcpw")]
+transform = Transform3D(5.7598815, 0, 0, 0, 3.4907386, 0, 0, 0, 4.619716, -24.519527, -0.47060946, -4.954389)
+
+[node name="Barrel6" type="MeshInstance3D" parent="." unique_id=1029210441]
+transform = Transform3D(-0.7174822, 0, -0.6965768, 0, 1, 0, 0.6965768, 0, -0.7174822, -24.532791, 0, -4.9792547)
+mesh = ExtResource("3_tosn6")
+
+[node name="box_A3" parent="." unique_id=1259943073 instance=ExtResource("4_bwbb5")]
+transform = Transform3D(1.7810293, 0, -2.3912084, 0, 4.2736125, 0, 1.5127757, 0, 2.8152306, -21.81818, -0.5065236, -4.9245405)
+
+[node name="box_A4" parent="." unique_id=208992976 instance=ExtResource("4_bwbb5")]
+transform = Transform3D(2.7532864, 0, 0, 0, 1.9603932, 0, 0, 0, 2.0177457, -22.378136, -0.47082567, -4.9508233)
+
+[node name="box_A5" parent="." unique_id=1921316725 instance=ExtResource("4_bwbb5")]
+transform = Transform3D(2.0326085, 0, 0, 0, 1.9905195, 0, 0, 0, 1.7844511, -30.89639, 0.2639227, -4.2294607)
+
+[node name="Boat" parent="." unique_id=1632721588 instance=ExtResource("1_nvo4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8033371, 0.47207355, 0)
