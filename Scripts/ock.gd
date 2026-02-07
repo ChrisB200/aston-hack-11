@@ -78,6 +78,8 @@ func _physics_process(delta: float) -> void:
 			var steer := 8.0 * steer_mult
 			velocity.x = move_toward(velocity.x, desired_dir.x * push_speed, steer * delta)
 			velocity.z = move_toward(velocity.z, desired_dir.z * push_speed, steer * delta)
+	move_and_slide()
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -93,5 +95,3 @@ func _unhandled_input(event: InputEvent) -> void:
 			deg_to_rad(-60),
 			deg_to_rad(45)
 		)
-
-	move_and_slide()
