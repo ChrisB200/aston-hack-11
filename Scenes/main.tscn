@@ -1,17 +1,28 @@
 [gd_scene format=3 uid="uid://dbsihtk25k1rh"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7u77a"]
-size = Vector3(100, 2, 100)
+[ext_resource type="PackedScene" uid="uid://bhf3aynky7ll3" path="res://Scenes/boat.tscn" id="1_jjgbg"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_jjgbg"]
-size = Vector3(100, 2, 100)
+[sub_resource type="BoxMesh" id="BoxMesh_bo1nx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8gbba"]
 
 [node name="Main" type="Node" unique_id=1956192783]
 
-[node name="Platform" type="StaticBody3D" parent="." unique_id=1337490018]
+[node name="ApolloIII" parent="." unique_id=360702949 instance=ExtResource("1_jjgbg")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform" unique_id=263818527]
-shape = SubResource("BoxShape3D_7u77a")
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1465687540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.518798, 5.831731, -3.3487282)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform" unique_id=1817842810]
-mesh = SubResource("BoxMesh_jjgbg")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1366712534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41326094, 0)
+mesh = SubResource("BoxMesh_bo1nx")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=107272043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41326094, 0)
+shape = SubResource("BoxShape3D_8gbba")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=884943681]
+transform = Transform3D(1, 0, 0, 0, 0.90123594, 0.43332878, 0, -0.43332878, 0.90123594, 2.8486376, 6.9891167, 6.556895)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1134799537]
