@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c76iiyvrn7i44"]
+
+[ext_resource type="Script" uid="uid://gllfrl07wc7p" path="res://Scripts/minion_pickup.gd" id="1_3uhsm"]
+[ext_resource type="PackedScene" uid="uid://n8ndgccq7y8q" path="res://Scenes/minion.tscn" id="2_pgebk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hw6f1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgebk"]
+albedo_color = Color(0.8035538, 4.428029e-06, 4.813075e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pgebk"]
+material = SubResource("StandardMaterial3D_pgebk")
+
+[node name="MinionPickup" type="Area3D" unique_id=2039436012]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_3uhsm")
+minion_scene = ExtResource("2_pgebk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=820487838]
+shape = SubResource("CapsuleShape3D_hw6f1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=421942926]
+mesh = SubResource("CapsuleMesh_pgebk")
