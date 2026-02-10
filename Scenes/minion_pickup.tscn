@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c76iiyvrn7i44"]
+[gd_scene load_steps=0 format=3 uid="uid://c76iiyvrn7i44"]
 
 [ext_resource type="Script" uid="uid://gllfrl07wc7p" path="res://Scripts/minion_pickup.gd" id="1_3uhsm"]
 [ext_resource type="PackedScene" uid="uid://n8ndgccq7y8q" path="res://Scenes/minion.tscn" id="2_pgebk"]

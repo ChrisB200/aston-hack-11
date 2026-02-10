@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://dbsihtk25k1rh"]
+[gd_scene load_steps=9 format=3 uid="uid://dbsihtk25k1rh"]
 
 [ext_resource type="PackedScene" uid="uid://gyi5emrkwxrf" path="res://Scenes/ock.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://c76iiyvrn7i44" path="res://Scenes/minion_pickup.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" path="res://Scenes/minion_pickup.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bkuhql6bwkth0" path="res://Scenes/ragdoll.tscn" id="3_8gbba"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u77a"]
 size = Vector3(40, 2, 40)
@@ -18,27 +19,30 @@ sky_material = SubResource("PhysicalSkyMaterial_jjgbg")
 background_mode = 2
 sky = SubResource("Sky_bo1nx")
 
-[node name="Main" type="Node" unique_id=1956192783]
+[node name="Main" type="Node"]
 
-[node name="Platform" type="StaticBody3D" parent="." unique_id=1337490018]
+[node name="Platform" type="StaticBody3D" parent="."]
 collision_mask = 6
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform" unique_id=263818527]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
 shape = SubResource("BoxShape3D_7u77a")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform" unique_id=1817842810]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
 mesh = SubResource("BoxMesh_jjgbg")
 
-[node name="Ock" parent="." unique_id=1424308971 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45152855, 20.653627, 4.746105)
+[node name="Ock" parent="." instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451529, 20.6536, 14.0024)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=629837306]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjgbg")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1725400274]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 14.339813, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 14.3398, 0)
 light_energy = 4.495
 shadow_enabled = true
 
-[node name="MinionPickup" parent="." unique_id=2039436012 instance=ExtResource("2_bo1nx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.596966, 2.1393385, -12.4353895)
+[node name="MinionPickup" parent="." instance=ExtResource("2_bo1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.597, 2.13934, -12.4354)
+
+[node name="Ragdoll" parent="." instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49065, 9.51029, -7.53343)

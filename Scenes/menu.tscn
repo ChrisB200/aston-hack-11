@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cqfgeksse2hgm"]
+[gd_scene load_steps=3 format=3 uid="uid://cqfgeksse2hgm"]
 
 [ext_resource type="Texture2D" uid="uid://dnvwwnsd4tt7f" path="res://Assets/bigOck.png" id="1_3kf3n"]
-[ext_resource type="Script" uid="uid://di3niqc51mg5b" path="res://Scenes/play.gd" id="2_xhh6f"]
+[ext_resource type="Script" uid="uid://di3niqc51mg5b" path="res://Scripts/play.gd" id="2_xhh6f"]
 
-[node name="Control" type="Control" unique_id=36065915]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,19 +15,19 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BigOck" type="Sprite2D" parent="." unique_id=543973795]
-position = Vector2(561.4999, 317.49997)
-scale = Vector2(0.40873575, 0.41861978)
+[node name="BigOck" type="Sprite2D" parent="."]
+position = Vector2(561.5, 317.5)
+scale = Vector2(0.408736, 0.41862)
 texture = ExtResource("1_3kf3n")
 
-[node name="Panel" type="Panel" parent="." unique_id=2018072740]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 857.0
 offset_top = 19.0
 offset_right = 1110.0
 offset_bottom = 96.0
 
-[node name="Label" type="Label" parent="Panel" unique_id=1287695365]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 9.0
@@ -36,7 +36,7 @@ offset_bottom = 64.0
 theme_override_font_sizes/font_size = 40
 text = "Lord Ock"
 
-[node name="Play" type="Button" parent="." unique_id=399094356]
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
 offset_left = 423.0
 offset_top = 491.0

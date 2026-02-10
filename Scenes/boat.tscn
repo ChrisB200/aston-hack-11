@@ -1,61 +1,61 @@
-[gd_scene format=3 uid="uid://bhf3aynky7ll3"]
+[gd_scene load_steps=5 format=3 uid="uid://bhf3aynky7ll3"]
 
 [ext_resource type="PackedScene" uid="uid://5k76itqrno7f" path="res://Assets/Ship/viking-line-ss-apollo-iii-1959-1976/source/ApolloIII.glb" id="1_d82p8"]
 [ext_resource type="PackedScene" uid="uid://uws8ciy25h64" path="res://Scenes/vent.tscn" id="2_g7r5y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d82p8"]
-size = Vector3(7.6469727, 7.526245, 1)
+size = Vector3(7.64697, 7.52625, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g7r5y"]
-size = Vector3(5.4350586, 0.9713135, 11.547852)
+size = Vector3(5.43506, 0.971313, 11.5479)
 
-[node name="Boat" type="Node3D" unique_id=1632721588]
+[node name="Boat" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1205585597]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=714197856]
-transform = Transform3D(76.80825, 0, 0, 0, 1, 0, 0, 0, 50, -5.8081226, -1.1500793, -0.9750788)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(76.8083, 0, 0, 0, 1, 0, 0, 0, 50, -5.80812, -1.15008, -0.975079)
 shape = SubResource("BoxShape3D_d82p8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=584459875]
-transform = Transform3D(7.1330237, 0, 0, 0, 2, 0, 0, 0, 2, -10.800636, 5.1386957, -6.885104)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(7.13302, 0, 0, 0, 2, 0, 0, 0, 2, -10.8006, 5.1387, -6.8851)
 shape = SubResource("BoxShape3D_d82p8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D/CollisionShape3D2" unique_id=1431328161]
-transform = Transform3D(7.1330237, 0, 0, 0, 2, 0, 0, 0, 2, -10.800636, -1.0284476, 7.3363543)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D/CollisionShape3D2"]
+transform = Transform3D(7.13302, 0, 0, 0, 2, 0, 0, 0, 2, -10.8006, -1.02845, 7.33635)
 shape = SubResource("BoxShape3D_d82p8")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=126560098]
-transform = Transform3D(2.9765573, -0.17041077, 0, 0.13745528, 3.6901991, 0, 0, 0, 1, 18.190823, -0.18984358, 0.35107422)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(2.97656, -0.170411, 0, 0.137455, 3.6902, 0, 0, 0, 1, 18.1908, -0.189844, 0.351074)
 shape = SubResource("BoxShape3D_g7r5y")
 
-[node name="ApolloIII" parent="." unique_id=1961846223 instance=ExtResource("1_d82p8")]
+[node name="ApolloIII" parent="." instance=ExtResource("1_d82p8")]
 transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 0, 0, 0)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1131335114]
-transform = Transform3D(6.875989, 0, -0.5320544, 0, 2, 0, 1.8975784, 0, 1.927931, 21.879992, 5.1386957, -4.2853265)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.87599, 0, -0.532054, 0, 2, 0, 1.89758, 0, 1.92793, 21.88, 5.1387, -4.28533)
 shape = SubResource("BoxShape3D_d82p8")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=659582081]
-transform = Transform3D(6.8308454, 0, 0.57595795, 0, 2, 0, -2.0541615, 0, 1.9152733, 13.993972, 5.138695, 6.0591836)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.83085, 0, 0.575958, 0, 2, 0, -2.05416, 0, 1.91527, 13.994, 5.13869, 6.05918)
 shape = SubResource("BoxShape3D_d82p8")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=801258790]
-transform = Transform3D(0.3920846, 0, 1.9969761, 0, 2, 0, -7.1222396, 0, 0.109935164, 25.623127, 5.138695, 0.3688092)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.392085, 0, 1.99698, 0, 2, 0, -7.12224, 0, 0.109935, 25.6231, 5.13869, 0.368809)
 shape = SubResource("BoxShape3D_d82p8")
 
-[node name="Vent" parent="." unique_id=1830551711 node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
-transform = Transform3D(-0.018639777, 0.9539874, -0.085401885, 0.28879014, 0.06157451, -0.0055122115, 5.190377e-10, -0.2934565, -0.27878663, 10.75581, 1.554626, -4.342876)
+[node name="Vent" parent="." node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
+transform = Transform3D(-0.0186398, 0.953987, -0.0854019, 0.28879, 0.0615745, -0.00551221, 5.19038e-10, -0.293456, -0.278787, 10.7558, 1.55463, -4.34288)
 linked_vent = NodePath("../Vent2")
 
-[node name="Vent2" parent="." unique_id=1668927036 node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
-transform = Transform3D(-0.01863977, -0.99791837, 0.000944823, 0.28879008, -0.06441001, 6.0978346e-05, -1.3622623e-09, 0.0032464862, 0.29162467, 2.0971057, -0.47904348, -5.164857)
+[node name="Vent2" parent="." node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
+transform = Transform3D(-0.0186398, -0.997918, 0.000944823, 0.28879, -0.06441, 6.09783e-05, -1.36226e-09, 0.00324649, 0.291625, 2.09711, -0.479043, -5.16486)
 linked_vent = NodePath("../Vent")
 
-[node name="Vent3" parent="." unique_id=740353479 node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
-transform = Transform3D(-0.018639777, 0.9557936, 0.08366675, 0.28879014, 0.06169109, 0.005400217, 4.3144827e-10, 0.28749418, -0.27931446, 10.580891, 1.543336, 4.5522304)
+[node name="Vent3" parent="." node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
+transform = Transform3D(-0.0186398, 0.955794, 0.0836667, 0.28879, 0.0616911, 0.00540022, 4.31448e-10, 0.287494, -0.279314, 10.5809, 1.54334, 4.55223)
 linked_vent = NodePath("../Vent4")
 
-[node name="Vent4" parent="." unique_id=1998483431 node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
-transform = Transform3D(-0.01863977, -0.99791837, 0.000944823, 0.28879008, -0.06441001, 6.0978346e-05, -1.3622623e-09, 0.0032464862, 0.29162467, 2.1312406, -0.47684044, 5.371031)
+[node name="Vent4" parent="." node_paths=PackedStringArray("linked_vent") instance=ExtResource("2_g7r5y")]
+transform = Transform3D(-0.0186398, -0.997918, 0.000944823, 0.28879, -0.06441, 6.09783e-05, -1.36226e-09, 0.00324649, 0.291625, 2.13124, -0.47684, 5.37103)
 linked_vent = NodePath("../Vent3")
